@@ -1,5 +1,6 @@
 public class Car {
 
+    public static int Wheels = 4;
     private boolean operability;
     private int carId;
 
@@ -57,4 +58,13 @@ public class Car {
             System.out.print("Автомобиль нуждается в ремонте\n");
         }
     }
+    static public int GetWheels(){
+        return Wheels;
+    }
+    void PrintMarkUp(){
+        this.CarC.mark = this.CarC.mark.toUpperCase();
+        System.out.println("Верхний регистр");
+        System.out.println(this.CarC.mark);
+    }
+
 }

@@ -8,5 +8,21 @@ public class Main {
         route2.Print();             // Конструктор с парамметрами
         route2.BanDriver();
         route2.driver.GetRequest();
+        route2.car.PrintMarkUp();
+
+
+        Route route3 = new Route(){
+          public int GetEnd(){
+              int end;
+              Route x = new Route();
+              x.SetEnd(11);
+              System.out.print("Такая же оценка, но немного другая\n");
+              end = x.GetEnd();
+              return end;
+          }
+
+        };
+        route3.GetEnd();
+
         }
     }

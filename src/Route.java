@@ -22,8 +22,8 @@ public class Route {
     public void SetEnd(int end){
         this.end = end;
     }
-    public void GetEnd(){
-        System.out.printf("Оценка поездки: %d\n", end );
+    public int GetEnd(){
+        return end;
     }
     public void GetStatus(){
         if(status){
@@ -50,6 +50,9 @@ public class Route {
         driver.GetId();
         driver.GetRequest();
     }
+
+
+
 
 
 }
