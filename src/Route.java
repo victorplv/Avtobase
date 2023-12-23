@@ -50,7 +50,15 @@ public class Route {
         driver.GetId();
         driver.GetRequest();
     }
-
+    public void ScoreTrip(int end){
+        try{
+            if(end<0) throw new ArithmeticException();
+            this.end = end;
+            System.out.println("Установлена новая оценка поездки!");
+        }catch (ArithmeticException exception){
+            System.out.println("Оценка не может быть меньше нуля!!!");
+        }
+    }
 
 
 
