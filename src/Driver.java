@@ -1,5 +1,5 @@
 
-public class Driver {
+public class Driver implements Info {
     private boolean request;
     private int id;
 
@@ -23,12 +23,23 @@ public class Driver {
     public void GetId(){
         System.out.printf("ID водителя: %d\n", id );
     }
-    public void GetRequest(){
+    public void GetRequest()
+    {
         if(request){
             System.out.print("Водитель в поездке\n");
         } else {
             System.out.print("Водитель не в поездке\n");
     }
     }
+    public String toString()
+    {
+        System.out.print("Информация о водителе\n");
+        return "Статус: "+request+", Номер водителя: "+id;
+    }
 
+
+    @Override
+    public void ShowInfo() {
+        System.out.print("Я водитель, я везу\n");
+    }
 }

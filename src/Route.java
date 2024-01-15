@@ -4,11 +4,21 @@ public class Route {
     Driver driver = new Driver();
     Dispatcher disp = new Dispatcher();
     Car car = new Car();
+    GlavDisp D = new GlavDisp();
+    UrbanRoad UR = new UrbanRoad();
+    NotURoad NR = new NotURoad();
+
 
     public Route(){
         this.status = false;
         this.end = 0;
     }
+    public Route( boolean stat, int end)
+    {
+        this.status = stat;
+        this.end = end;
+    }
+
     public Route(boolean status, int end, boolean cOper, int cId, String mark, String type, boolean reqD, int dId, boolean statD, int dispID ){
         this.status = status;
         this.end = end;
@@ -25,12 +35,13 @@ public class Route {
     public int GetEnd(){
         return end;
     }
-    public void GetStatus(){
+    public boolean GetStatus(){
         if(status){
             System.out.print("Поездка в процессе либо закончена\n");
         } else {
             System.out.print("Поездка не началась, либо не существует\n");
         }
+        return status;
     }
     public void BanDriver(){
         driver.SetRequest(false);
@@ -41,14 +52,9 @@ public class Route {
         System.out.print("Автомобилю требуется ремонт\n");
     }
     public void Print(){
-        GetEnd();
-        GetStatus();
-        car.GetId();
-        car.GetRequest();
-        car.CarC.GetType();
-        car.CarC.GetMark();
-        driver.GetId();
-        driver.GetRequest();
+        System.out.print("\nОценка "+end);
+        System.out.print("\nСтатус "+status);
+
     }
     public void ScoreTrip(int end){
         try{

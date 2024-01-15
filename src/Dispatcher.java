@@ -1,6 +1,6 @@
-public class Dispatcher {
-    private int id;
-    private boolean statusD;
+public class Dispatcher implements Info {
+    protected int id;
+    protected boolean statusD;
 
     public Dispatcher()
     {
@@ -13,6 +13,9 @@ public class Dispatcher {
         this.id = id;
     }
 
+    public void func(){
+        System.out.println("Я обычный диспетчер");
+    }
     public void SetId(int id){
         this.id = id;
     }
@@ -28,5 +31,10 @@ public class Dispatcher {
         } else {
             System.out.print("Диспетчер свободен\n");
         }
+    }
+
+    @Override
+    public void ShowInfo() {
+        System.out.print("Я диспетчер, я слежу\n");
     }
 }
